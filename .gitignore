@@ -12,7 +12,6 @@ tmp/
 nbproject/*
 config/database.yml
 db/schema.rb
-Gemfile.lock
 public/ckeditor_assets/*
 public/system/*
 coverage
@@ -22,6 +21,5 @@ pkg
 .bundle
 doc/ 
 public/assets/*
-config/database.yml
-*.vim
+#*.vim
 -MiniBufExplorer-
