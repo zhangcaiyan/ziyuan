@@ -24,3 +24,6 @@ zh-CN:
         reset_password_sent_at: 重置密码邮件发送时间
         reset_password_token: 重置码
         username: 用户名
+        password: 密码
+        password_confirmation: 密码确认
+        remember_me: 记住密码

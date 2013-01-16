@@ -14,11 +14,16 @@ gem 'meta_search'
 gem 'rmagick'
 gem 'paperclip'
 gem 'devise', '~> 1.5.3'
+gem 'devise-async'
 gem 'symbolize', require: "symbolize/active_record"
 gem 'settingslogic'
 gem "default_value_for"
 gem "faker"
 gem 'acts_as_list'
+gem 'active_hash'
+gem 'daemons'
+gem 'ruby_regex'
+gem 'delayed_job_active_record'
 
 
 group :development, :test do
