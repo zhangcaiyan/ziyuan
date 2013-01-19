@@ -8,11 +8,4 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-user, test = Setting::User.user, Setting::User.test 
-[user, test].each do |u|
-  if !User.exists?(email: u.email )
-    user=User.create(u)
-    User.confirm_by_token(user.confirmation_token)
-    puts "填充账户数据"
-  end
-end
+
