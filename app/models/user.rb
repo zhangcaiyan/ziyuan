@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
 
   validates_presence_of :email, :username, :password, :password_confirmation
   validates :email, format: {with: RubyRegex::Email}, uniqueness: true
-  validates :username, format: {with: RubyRegex::Email}, uniqueness: true
+  validates :username, uniqueness: true
   validates :password, confirmation: true, length: {minimum: 6}
 
 
