@@ -1,14 +1,14 @@
-<h2>编辑 <%= resource_name.to_s.humanize %></h2>
+<h2>编辑用户</h2>
 
 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= f.error_notification %>
 
   <div class="inputs">
-    <%= f.input :email, :required => true, :autofocus => true %>
-    <%= f.input :username, :required => true %>
-    <%= f.input :password, :hint => "如果不想修改密码，可以保持为空", :required => false %>
-    <%= f.input :password_confirmation, :required => false %>
-    <%= f.input :current_password, :hint => "需要输入当前密码来更新信息", :required => true %>
+    <%#= f.input :email, :required => true, :autofocus => true %>
+    <%= f.input :username %>
+    <%= f.input :password, hint: "如果不想修改密码，可以保持为空", required: false, input_html: {autocomplete: "off"} %>
+    <%= f.input :password_confirmation, required: false %>
+    <%= f.input :current_password, hint: "需要输入当前密码来更新信息", required: true %>
   </div>
 
   <div class="actions">
@@ -16,8 +16,29 @@
   </div>
 <% end %>
 
+
+<%= link_to "返回", :back %>
+
+<% content_for :head do %>
+  <script>
+    $(function(){
+      $(".edit_user").validate({
+        rules: {
+          "user[login]": {
+            required: true
+          },
+          "user[password]": {
+            required: true
+          }
+        }
+      })
+    })
+  </script>
+<% end %>
+
+
+<% if nil %>
 <h3>注销账户</h3>
 
 <p>不开心? <%= link_to "注销账户", registration_path(resource_name), :confirm => "确定注销账户吗?", :method => :delete %>.</p>
-
-<%= link_to "返回", :back %>
+<% end %>

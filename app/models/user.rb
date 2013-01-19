@@ -11,6 +11,13 @@ class User < ActiveRecord::Base
 
   attr_accessor :login
 
+  validates_presence_of :email, :username, :password, :password_confirmation
+  validates :email, format: {with: RubyRegex::Email}, uniqueness: true
+  validates :username, format: {with: RubyRegex::Email}, uniqueness: true
+  validates :password, confirmation: true, length: {minimum: 6}
+
+
+
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
     login = conditions.delete(:login)

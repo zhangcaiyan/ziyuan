@@ -4,10 +4,10 @@
   <%= f.error_notification %>
 
   <div class="inputs">
-    <%= f.input :email, :required => true, :autofocus => true %>
-    <%= f.input :username, :required => true %>
-    <%= f.input :password, :required => true %>
-    <%= f.input :password_confirmation, :required => true %>
+    <%= f.input :email, autofocus: true %>
+    <%= f.input :username %>
+    <%= f.input :password %>
+    <%= f.input :password_confirmation %>
   </div>
 
   <div class="actions">
@@ -16,3 +16,21 @@
 <% end %>
 
 <%= render :partial => "devise/shared/links" %>
+
+<% content_for :head do %>
+  <script>
+    $(function(){
+      $(".new_user").validate({
+        rules: {
+          "user[password]": {
+            minlength: 6
+          },
+          "user[password_confirmation]": {
+            equalTo: "#user_password",
+            required: true
+          }
+        }
+      })
+    })
+  </script>
+<% end %>

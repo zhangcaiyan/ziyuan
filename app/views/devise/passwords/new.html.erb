@@ -13,3 +13,11 @@
 <% end %>
 
 <%= render :partial => "devise/shared/links" %>
+
+<% content_for :head do %>
+  <script>
+    $(function(){
+      $(".new_user").validate()
+    })
+  </script>
+<% end %>

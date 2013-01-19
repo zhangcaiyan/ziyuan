@@ -12,4 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.validate.min.js
+//= require jquery.validate.messages_zh.js
 //= require_tree .
