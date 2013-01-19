@@ -27,3 +27,4 @@ zh-CN:
         password: 密码
         password_confirmation: 密码确认
         remember_me: 记住密码
+        login: 用户名或email

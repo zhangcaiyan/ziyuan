@@ -18,7 +18,6 @@ gem 'devise-async'
 gem 'symbolize', require: "symbolize/active_record"
 gem 'settingslogic'
 gem "default_value_for"
-gem "faker"
 gem 'acts_as_list'
 gem 'active_hash'
 gem 'daemons'
@@ -28,6 +27,7 @@ gem 'delayed_job_active_record'
 
 group :development, :test do
   gem 'pry'
+  gem "faker"
 end
 
 # Gems used only for assets and not required
