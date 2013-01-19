@@ -1,12 +1,12 @@
 defaults: &defaults
-  test:
+  user:
     email: zhangcaiyanbeyond@gmail.com 
     username: zhangcaiyan
     password: zhangcaiyan
     password_confirmation: zhangcaiyan
 
 
-  user:
+  test:
     email: <%= Faker::Internet.email %>
     username: <%= Faker::Name.name %>
     password: zhangcaiyan

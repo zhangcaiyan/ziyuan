@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ziyuan</title>
+    <title>资源回收交易平台</title>
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
+    <%= yield(:head) if content_for?(:head)  %>
     <%= csrf_meta_tags %>
   </head>
   <body>
 
+    <% if user_signed_in? %>
+      <%= link_to '退出', destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= current_link('用户登录', new_user_session_path) %>
+      <%= current_link('用户注册', new_user_registration_path) %>
+    <% end %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
